@@ -12,11 +12,13 @@ type MetricService interface {
 
 type Counter interface {
 	WithLabels(...string) Counter
+	WithLabelValues(...string) Counter
 	Add(float64)
 }
 
 type Gauge interface {
 	WithLabels(...string) Gauge
+	WithLabelValues(...string) Gauge
 	Add(float64)
 	Sub(float64)
 	Set(float64)
@@ -24,5 +26,6 @@ type Gauge interface {
 
 type Histogram interface {
 	WithLabels(...string) Histogram
+	WithLabelValues(...string) Histogram
 	Observe(float64)
 }

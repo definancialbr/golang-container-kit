@@ -246,6 +246,15 @@ func (c *Counter) WithLabels(keysAndValues ...string) metrics.Counter {
 
 }
 
+func (c *Counter) WithLabelValues(values ...string) metrics.Counter {
+
+	return &Counter{
+		vec:     c.vec,
+		counter: c.vec.WithLabelValues(values...),
+	}
+
+}
+
 func (c *Counter) Add(value float64) {
 	c.counter.Add(value)
 }
@@ -280,6 +289,15 @@ func (g *Gauge) WithLabels(keysAndValues ...string) metrics.Gauge {
 	return &Gauge{
 		vec:   g.vec,
 		gauge: g.vec.With(labels),
+	}
+
+}
+
+func (g *Gauge) WithLabelValues(values ...string) metrics.Gauge {
+
+	return &Gauge{
+		vec:   g.vec,
+		gauge: g.vec.WithLabelValues(values),
 	}
 
 }
@@ -327,6 +345,15 @@ func (g *Histogram) WithLabels(keysAndValues ...string) metrics.Histogram {
 	return &Histogram{
 		vec:      g.vec,
 		observer: g.vec.With(labels),
+	}
+
+}
+
+func (g *Histogram) WithLabelValues(values ...string) metrics.Histogram {
+
+	return &Histogram{
+		vec:      g.vec,
+		observer: g.vec.WithLabelValues(values...),
 	}
 
 }
