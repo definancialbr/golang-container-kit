@@ -297,7 +297,7 @@ func (g *Gauge) WithLabelValues(values ...string) metrics.Gauge {
 
 	return &Gauge{
 		vec:   g.vec,
-		gauge: g.vec.WithLabelValues(values),
+		gauge: g.vec.WithLabelValues(values...),
 	}
 
 }
