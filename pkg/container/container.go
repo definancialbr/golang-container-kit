@@ -1,11 +1,11 @@
 package container
 
 import (
-	"github.com/GrooveDEF/golang-container-kit/pkg/configuration"
-	"github.com/GrooveDEF/golang-container-kit/pkg/logging"
-	"github.com/GrooveDEF/golang-container-kit/pkg/metrics"
-	"github.com/GrooveDEF/golang-container-kit/pkg/probes"
-	"github.com/GrooveDEF/golang-container-kit/pkg/signaler"
+	"github.com/definancialbr/golang-container-kit/pkg/configuration"
+	"github.com/definancialbr/golang-container-kit/pkg/logging"
+	"github.com/definancialbr/golang-container-kit/pkg/metrics"
+	"github.com/definancialbr/golang-container-kit/pkg/probes"
+	"github.com/definancialbr/golang-container-kit/pkg/signaler"
 )
 
 type ContainerServiceState int

@@ -3,7 +3,7 @@ package viper
 import (
 	"strings"
 
-	"github.com/GrooveDEF/golang-container-kit/pkg/configuration"
+	"github.com/definancialbr/golang-container-kit/pkg/configuration"
 	"github.com/mitchellh/go-homedir"
 	"github.com/spf13/viper"
 )

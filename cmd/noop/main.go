@@ -3,12 +3,12 @@ package main
 import (
 	"time"
 
-	"github.com/GrooveDEF/golang-container-kit/pkg/configuration/viper"
-	"github.com/GrooveDEF/golang-container-kit/pkg/container"
-	"github.com/GrooveDEF/golang-container-kit/pkg/logging/zap"
-	"github.com/GrooveDEF/golang-container-kit/pkg/metrics/prometheus"
-	"github.com/GrooveDEF/golang-container-kit/pkg/probes/healthcheck"
-	"github.com/GrooveDEF/golang-container-kit/pkg/signaler"
+	"github.com/definancialbr/golang-container-kit/pkg/configuration/viper"
+	"github.com/definancialbr/golang-container-kit/pkg/container"
+	"github.com/definancialbr/golang-container-kit/pkg/logging/zap"
+	"github.com/definancialbr/golang-container-kit/pkg/metrics/prometheus"
+	"github.com/definancialbr/golang-container-kit/pkg/probes/healthcheck"
+	"github.com/definancialbr/golang-container-kit/pkg/signaler"
 )
 
 func terminationHandler(release func()) error {

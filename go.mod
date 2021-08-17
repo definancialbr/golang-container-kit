@@ -1,4 +1,4 @@
-module github.com/GrooveDEF/golang-container-kit
+module github.com/definancialbr/golang-container-kit
 
 go 1.15
 
