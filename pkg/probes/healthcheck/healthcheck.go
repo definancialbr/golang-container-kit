@@ -134,6 +134,6 @@ func (p *ProbeService) LivenessHandler() http.Handler {
 
 func (p *ProbeService) ReadinessHandler() http.Handler {
 	router := mux.NewRouter()
-	router.NewRoute().HandlerFunc(p.health.LiveEndpoint)
+	router.NewRoute().HandlerFunc(p.health.ReadyEndpoint)
 	return router
 }
