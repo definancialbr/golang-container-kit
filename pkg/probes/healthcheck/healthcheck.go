@@ -6,7 +6,6 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/gorilla/mux"
 	"github.com/heptiolabs/healthcheck"
 )
 
@@ -126,14 +125,10 @@ func NewProbeService(options ...ProbeServiceOption) *ProbeService {
 
 }
 
-func (p *ProbeService) LivenessHandler() http.Handler {
-	router := mux.NewRouter()
-	router.NewRoute().HandlerFunc(p.health.LiveEndpoint)
-	return router
+func (p *ProbeService) LivenessHandler() http.HandlerFunc {
+	return p.health.LiveEndpoint
 }
 
-func (p *ProbeService) ReadinessHandler() http.Handler {
-	router := mux.NewRouter()
-	router.NewRoute().HandlerFunc(p.health.ReadyEndpoint)
-	return router
+func (p *ProbeService) ReadinessHandler() http.HandlerFunc {
+	return p.health.ReadyEndpoint
 }
