@@ -15,6 +15,18 @@ type ProbeService struct {
 	health healthcheck.Handler
 }
 
+func WithCheckForLiveness(name string, check func() error) ProbeServiceOption {
+	return func(p *ProbeService) {
+		p.health.AddLivenessCheck(name, check)
+	}
+}
+
+func WithCheckForReadiness(name string, check func() error) ProbeServiceOption {
+	return func(p *ProbeService) {
+		p.health.AddReadinessCheck(name, check)
+	}
+}
+
 func WithGoroutineCountCheckForLiveness(name string, threshold int) ProbeServiceOption {
 	return func(p *ProbeService) {
 		p.health.AddLivenessCheck(name, healthcheck.GoroutineCountCheck(threshold))
